@@ -1,0 +1,48 @@
+/* CSS styles for the form */
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Style the button */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the link to the list of students */
+a {
+    text-decoration: none;
+    color: #007bff;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+/* Additional styles can be added as needed */
+/* CSS styles for the layout */
+.container {
+    display: flex;
+}
+
+.form {
+    flex: 3; /* Takes up 3/4 of the available space */
+    padding: 20px;
+}
+
+.sidebar {
+    flex: 1; /* Takes up 1/4 of the available space */
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.2); /* Add a shadow for separation */
+}
+
+/* Rest of your CSS styles */

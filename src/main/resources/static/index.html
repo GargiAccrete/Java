@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" type="text/css" href="CSS/style.css"> <!-- Link to your CSS file -->
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <h1>Student Registration</h1>
+		<div class="container mt-5">
+        	<form class="form" method="post" enctype="multipart/form-data" id="studentForm">
+	            <div class="form-row">
+    	            <div class="form-group col-md-4">
+        	            <label for="f_name">First Name:</label>
+            	        <input type="text" class="form-control" id="f_name" name="f_name">
+                	    <span id="f_name_error"></span>
+                	</div>
+	                <div class="form-group col-md-4">
+	                    <label for="m_name">Middle Name:</label>
+	                    <input type="text" class="form-control" id="m_name" name="m_name">
+	                    <span id="m_name_error"></span>
+	                </div>
+                	<div class="form-group col-md-4">
+                    	<label for="l_name">Last Name:</label>
+                    	<input type="text" class="form-control" id="l_name" name="l_name">
+                    	<span id="l_name_error"></span>
+                	</div>
+            	</div>
+ 	            <div class="form-row">
+    				<div class="form-group col-md-4">
+        				<label class="mr-2">Gender:</label>
+        				<div class="form-check form-check-inline">
+            				<input type="radio" class="form-check-input" id="is_male" name="is_male" value="true">
+            				<label class="form-check-label mr-2" for="is_male">Male</label>
+            				<input type="radio" class="form-check-input" id="is_female" name="is_male" value="false">
+            				<label class="form-check-label" for="is_female">Female</label>
+        				</div>
+        				<span id="is_male_error"></span>
+    				</div>
+    				<div class="form-group col-md-4">
+        				<label for="email">Email:</label>
+        				<input type="email" class="form-control" id="email" name="email">
+        				<span id="email_error"></span>
+    				</div>
+    				<div class="form-group col-md-4">
+        				<label for="mobile_no">Mobile Number:</label>
+        				<input type="text" class="form-control" id="mobile_no" name="mobile_no">
+        				<span id="mobile_no_error"></span>
+    				</div>
+				</div>
+	            <div class="form-row">
+    	            <div class="form-group col-md">
+        	            <label for="institute_type_id">Institute Type:</label>
+            	        <select class="form-control" id="institute_type_id" name="institute_type_id">
+                	        <option value="0">Select Institute Type</option>
+                	        <option value="1">Type 1</option>
+                    	    <option value="2">Type 2</option>
+                        <!-- Add more options as needed -->
+                    	</select>
+                    	<span id="institute_type_id_error"></span>
+                	</div>
+                	<div class="form-group col-md">
+                    	<label for="institute_id">Institute:</label>
+                    	<select class="form-control" id="institute_id" name="institute_id">
+     						<option value="0">Select Institute</option>
+                        	<option value="1">Institute 1</option>
+                        	<option value="2">Institute 2</option>
+                        <!-- Add more options as needed -->
+	                    </select>
+    	                <span id="institute_id_error"></span>
+        	        </div>
+            	    <div class="form-group col-md">
+                	    <label for="department_id">Department:</label>
+                    	<select class="form-control" id="department_id" name="department_id">
+                        	<option value="0">Select Department</option>
+                        	<option value="1">Department 1</option>
+                        	<option value="2">Department 2</option>
+                        <!-- Add more options as needed -->
+                    	</select>
+                    	<span id="department_id_error"></span>
+                	</div>
+                	<div class="form-group col-md">
+                	    <label for="designation_id">Designation:</label>
+                    	<select class="form-control" id="designation_id" name="designation_id">
+                        	<option value="0">Select Designation</option>
+                        	<option value="1">Designation 1</option>
+                        	<option value="2">Designation 2</optio>
+                        <!-- Add more options as needed -->
+                    	</select>
+                    	<span id="designation_id_error"></span>
+                	</div>                	
+            	</div>
+	            <div class="form-group">
+    	            <label for="file">Image:</label>
+        	        <input type="file" class="form-control-file" id="file" name="file" accept="image/*">
+            	    <img id="filePreview" src="#" alt="File Preview" style="max-width: 17%;">
+                	<span id="file_error"></span>
+            	</div>
+	            <div class="form-group">
+    	            <fieldset>
+        	            <legend>Hobbies:</legend>
+            	        <div class="form-check">
+                	        <input type="checkbox" class="form-check-input" name="hobbies" value="Play Outdoor Games">
+                    	    <label class="form-check-label">Play Outdoor Games</label>
+                    	</div>
+                    	<div class="form-check">
+                        	<input type="checkbox" class="form-check-input" name="hobbies" value="Traveling">
+                        	<label class="form-check-label">Traveling</label>
+                    	</div>
+                    	<div class="form-check">
+                        	<input type="checkbox" class="form-check-input" name="hobbies" value="Coding">
+                        	<label class="form-check-label">Coding</label>
+	                    </div>
+    	                <div class="form-check">
+        	                <input type="checkbox" class="form-check-input" name="hobbies" value="Gaming">
+            	            <label class="form-check-label">Gaming</label>
+                	    </div>
+                    	<span id="hobbies_error"></span>
+                	</fieldset>
+            	</div>
+	            <div class="form-group">
+    	            <button type="submit" class="btn btn-primary" id="saveButton"></button>
+        	    </div>
+        	</form>
+    	</div>
+    	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    	<script>
+        	$(document).ready(function () {
+				var urlParams = new URLSearchParams(window.location.search);
+		        var studentId = urlParams.get('studentId');
+
+if (studentId) {
+                $('#saveButton').text('Update');
+            } else {
+                $('#saveButton').text('Save');
+            }
+		        if (studentId) {
+        		    $.ajax({
+                		type: 'GET',
+                		url: 'http://localhost:8080/student/getStudentDetail?studentId=' + studentId,
+                		success: function (data) {
+                    // Fill the form with student data
+		                    $('#f_name').val(data.f_name);
+        		            $('#m_name').val(data.m_name);
+                		    $('#l_name').val(data.l_name);
+                    		$('input[name="is_male"][value="' + data.is_male + '"]').prop('checked', true);
+                    		$('#email').val(data.email);
+                    		$('#mobile_no').val(data.mobile_no);
+                    		$('#institute_type_id').val(data.institute_type_id);
+                    		$('#institute_id').val(data.institute_id);
+                    		$('#department_id').val(data.department_id);
+                    		$('#designation_id').val(data.designation_id);
+							$('#file').attr("src","http://localhost:8080/Images/"+data.imageUrl)
+							$('#filePreview').attr("src","http://localhost:8080/Images/"+data.imageUrl)
+                    // Check hobbies based on the data
+                    		var hobbies = data.hobbies.split(',').map(function (item) {
+                        		return item.trim();
+                    		});
+		                    $('input[name="hobbies"]').each(function () {
+        	                	$(this).prop('checked', hobbies.includes($(this).val()));
+            	        	});
+                		},
+                		error: function (e) {
+                    		console.log('Error fetching student details:', e);
+                		}
+            		});
+			        $('#file').change(function () {
+      					previewFile();
+    				});
+        		}
+       			function previewFile() {
+      				var preview = $('#filePreview');
+      				var fileInput = $('#file')[0].files[0];
+      				var reader = new FileReader();
+
+      				reader.onloadend = function () {
+        				preview.attr('src', reader.result);
+        				preview.css('display', 'block');
+      				};
+
+				    if (fileInput) {
+				        reader.readAsDataURL(fileInput);
+				    } else {
+				        preview.attr('src', '');
+				        preview.css('display', 'none');
+				    }
+    			}
+    			
+    			$('#institute_type_id').change(function () {
+				    if ($(this).val() !== '0') {
+				        $('#institute_type_id_error').removeClass('error');
+				        $('#institute_type_id_error').text('');
+				    }
+				});
+				$('#institute_id').change(function () {
+			        if ($(this).val() !== '0') {
+			            $('#institute_id_error').removeClass('error');
+			            $('#institute_id_error').text('');
+			        }
+			    });
+			
+			    // Change event listener for Department
+			    $('#department_id').change(function () {
+			        if ($(this).val() !== '0') {
+			            $('#department_id_error').removeClass('error');
+			            $('#department_id_error').text('');
+			        }
+			    });
+			
+			    // Change event listener for Designation
+			    $('#designation_id').change(function () {
+			        if ($(this).val() !== '0') {
+			            $('#designation_id_error').removeClass('error');
+			            $('#designation_id_error').text('');
+			        }
+			    });
+
+				$('#f_name').change(function () {
+			        if ($(this).val()) {
+			            $('#f_name_error').removeClass('error');
+			            $('#f_name_error').text('');
+			        }
+			    });
+			    $('#m_name').change(function () {
+			        if ($(this).val()) {
+			            $('#m_name_error').removeClass('error');
+			            $('#m_name_error').text('');
+			        }
+			    });
+			    $('#l_name').change(function () {
+			        if ($(this).val()) {
+			            $('#l_name_error').removeClass('error');
+			            $('#l_name_error').text('');
+			        }
+			    });
+			     $('#is_male').change(function () {
+			        if ($(this).val()) {
+			            $('#is_male_error').removeClass('error');
+			            $('#is_male_error').text('');
+			        }
+			    });
+			    $('#email').change(function () {
+			        if ($(this).val()) {
+			            $('#email_error').removeClass('error');
+			            $('#email_error').text('');
+			        }
+			    });
+			    $('#mobile_no').change(function () {
+			        if ($(this).val()) {
+			            $('#mobile_no_error').removeClass('error');
+			            $('#mobile_no_error').text('');
+			        }
+			    });
+			    $('#file').change(function () {
+					previewFile();
+			        if ($(this).val()) {
+			            $('#file_error').removeClass('error');
+			            $('#file_error').text('');
+			        }
+			    });
+            	$('#studentForm').submit(function (event) {
+                	event.preventDefault();
+                	$('.error').removeClass('error');
+                	var isValid = true;
+                	if (!$('#f_name').val()) {
+                    	isValid = false;
+                    	$('#f_name_error').addClass('error');
+                    	$('#f_name_error').text('Please enter your First Name.');
+                	}
+                	if (!$('#m_name').val()) {
+                    	isValid = false;
+                    	$('#m_name_error').addClass('error');
+                    	$('#m_name_error').text('Please enter your Middle Name.');
+                	}
+                	if (!$('#l_name').val()) {
+                    	isValid = false;
+                    	$('#l_name_error').addClass('error');
+                    	$('#l_name_error').text('Please enter your Last Name.');
+                	}
+					if (!$('input[name="is_male"]:checked').val()) {
+                    	isValid = false;
+                    	$('#is_male_error').addClass('error');
+                    	$('#is_male_error').text('Please select your Gender.');
+                	}
+                	var emailRegex = /^\S+@\S+\.\S+$/;
+                	if (!$('#email').val() || !emailRegex.test($('#email').val())) {
+                    	isValid = false;
+                    	$('#email_error').addClass('error');
+                    	$('#email_error').text('Please enter a valid Email address.');
+                	}
+                	var mobileRegex = /^\d{10}$/;
+                	if (!$('#mobile_no').val() || !mobileRegex.test($('#mobile_no').val())) {
+	                    isValid = false;
+    	                $('#mobile_no_error').addClass('error');
+        	            $('#mobile_no_error').text('Please enter a valid 10-digit Mobile Number.');
+            	    }
+                	if (!$('#institute_type_id').val() || $('#institute_type_id').val() === '0') {
+                    	isValid = false;
+                    	$('#institute_type_id_error').addClass('error');
+                    	$('#institute_type_id_error').text('Please select an Institute Type.');
+                	}
+                	if (!$('#institute_id').val() || $('#institute_id').val() === '0') {
+	                    isValid = false;
+    	                $('#institute_id_error').addClass('error');
+        	            $('#institute_id_error').text('Please select an Institute.');
+            	    }
+                	if (!$('#department_id').val() || $('#department_id').val() === '0') {
+	                    isValid = false;
+    	                $('#department_id_error').addClass('error');
+        	            $('#department_id_error').text('Please select a Department.');
+            	    }
+                	if (!$('#designation_id').val() || $('#designation_id').val() === '0') {
+	                    isValid = false;
+    	                $('#designation_id_error').addClass('error');
+        	            $('#designation_id_error').text('Please select a Designation.');
+            	    }
+                	if (!$('#file').val()) {
+	                    isValid = false;
+    	                $('#file_error').addClass('error');
+        	            $('#file_error').text('Please select file.');
+            	    }
+                	if (!$('input[name="hobbies"]:checked').val()) {
+	                    isValid = false;
+    	                $('#hobbies_error').addClass('error');
+        	            $('#hobbies_error').text('Please select at least one Hobby.');
+            	    }
+                	if (isValid) {
+	                    var formData = new FormData($('#studentForm')[0])
+    	                console.log("formDataaaaaa", formData)
+
+						if(studentId){
+							 $.ajax({
+                        	type: 'POST',
+                        	url: `http://localhost:8080/student/updateStudent/${studentId}`,
+	                        data: formData,
+    	                    processData: false,
+        	                contentType: false,
+            	            success: function (data) {
+	                            console.log(data)
+    	                        alert(data);
+    	                        window.location.href = `/list.html`
+        	                    $('#studentForm')[0].reset();
+            	            },
+                	        error: function (e) {
+                    	        console.log('qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq', e)
+                        	    alert(e.responseText);
+	                        }
+    	                });
+						}else{
+							
+            	        $.ajax({
+                        	type: 'POST',
+                        	url: 'http://localhost:8080/student/addStudent',
+	                        data: formData,
+    	                    processData: false,
+        	                contentType: false,
+            	            success: function (data) {
+	                            console.log(data)
+    	                        alert(data);
+        	                    $('#studentForm')[0].reset();
+            	            },
+                	        error: function (e) {
+                    	        console.log('qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq', e)
+                        	    alert(e.responseText);
+	                        }
+    	                });
+						}
+        	        }
+            	});
+        	});
+    	</script>
+	</body>
+</html>
